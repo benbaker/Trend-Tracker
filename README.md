@@ -26,4 +26,7 @@ Someone please add some copy here.
 - Put tweets on map.
 - Add meta to map.
 - Plug in other APIs
-
+- Make views pretty
+- Give options to users
+- Speed up socket streams
+- Analytics
