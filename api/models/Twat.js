@@ -9,7 +9,7 @@ var twitter = require('twitter')
 
 var auth = require("../../auth.js")
 
-var twit = new twitter(auth);
+var twit = new twitter(auth.twitter);
 
 var sanFrancisco = [ '-122.75', '36.8', '-121.75', '37.8' ]
 var myLocation = sanFrancisco
