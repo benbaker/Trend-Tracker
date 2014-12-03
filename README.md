@@ -21,3 +21,9 @@ Someone please add some copy here.
 ###Use
         Point your browser at localhost:1337
 
+#TODO
+- Filter by users location.
+- Put tweets on map.
+- Add meta to map.
+- Plug in other APIs
+
