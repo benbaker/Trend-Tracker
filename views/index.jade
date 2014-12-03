@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1 twats
+    #twats
+
+    script(src="/js/dependencies/sails.io.js")
+    script(src="//code.jquery.com/jquery-2.1.1.min.js")
+    script.
+      function printTwat(twat){
+        var id = twat.id
+        $("#twats").prepend( $("<div>", { id:id }) )
+        $("#"+id).append($("<img>", { src:twat.user.profile_image_url }) )
+        $("#"+id).append(twat.text)
+        $("#"+id).append(twat.coordinates || "location unknown")
+        $("#twats").prepend("<hr>")
+      }
+
+      io.socket.get("/twat",{limit:2}, function(twats){
+        $.map(twats, function(twat){printTwat(twat)});
+      })
+
+      io.socket.on("twat", function(twat){
+        console.log(twat);
+        printTwat(twat.data)
+      })
